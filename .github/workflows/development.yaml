@@ -20,6 +20,13 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
 
+      - name: Checkout application repository
+        uses: actions/checkout@v3
+        with:
+          repository: lapalmerjack/kubernetes-project-backend  # Replace with your repository name
+          path: app-source
+          token: ${{ secrets.GITHUB_TOKEN }}
+
       - name: Set up Cloud SDK
         uses: google-github-actions/setup-gcloud@v2
         with:
@@ -43,7 +50,7 @@ jobs:
         run: |-
           docker build \
             --tag "gcr.io/$PROJECT_ID/$IMAGE:${GITHUB_REF#refs/heads/}-$GITHUB_SHA" \
-            lapalmerjack/kubernetes-project-backend
+            ./app-source
 
       - name: Publish
         run: |
