@@ -65,7 +65,7 @@ jobs:
       - name: Use right image
         run: |
           pwd
-          cd overlays/staging
+          cd base/overlays/staging
           kustomize edit set image gcr.io/$PROJECT_ID/$IMAGE=gcr.io/$PROJECT_ID/$IMAGE:${GITHUB_REF#refs/heads/}-$GITHUB_SHA
 
       - name: commit kustomization.yaml to Github
