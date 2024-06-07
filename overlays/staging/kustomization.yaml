@@ -5,5 +5,5 @@ resources:
 images:
 - name: BACKEND/IMAGE
   newName: gcr.io/dwk-gke-416915/backend
-  newTag: develop-c5685d421838a06f768a3787f5f9841c329a2ff4
+  newTag: develop-ee5e39c7aa068c44b2905a66055a48b18f80aed6
 
