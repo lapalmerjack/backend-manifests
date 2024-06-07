@@ -2,11 +2,10 @@ apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 resources:
 - ../../base
-namePrefix: staging-
 images:
 - name: BACKEND/IMAGE
   newName: gcr.io/dwk-gke-416915/backend
-  newTag: develop-b220e6503586a48686c7d9c505164a85a74044ca
+  newTag: develop-cad5d2bfa3f7545aecc0bfd7917c94a19185a563
 - name: gcr.io/dwk-gke-416915/backend
   newName: gcr.io/dwk-gke-416915/backend
   newTag: develop-cad5d2bfa3f7545aecc0bfd7917c94a19185a563
