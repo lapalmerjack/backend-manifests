@@ -8,4 +8,4 @@ images:
   newName: gcr.io/dwk-gke-416915/backend
 - name: gcr.io/dwk-gke-416915/backend
   newName: gcr.io/dwk-gke-416915/backend
-  newTag: develop-4ae8adc4384ba39246a9a806fbd6a81198390a86
+  newTag: develop-9cd680d3404cd3b5bae6a9bfb52037165ff436ff
