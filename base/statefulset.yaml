@@ -16,7 +16,7 @@ kind: StatefulSet
 metadata:
   name: database-ss
 spec:
-  serviceName: database-svc
+  serviceName: staging-database-svc
   replicas: 1
   updateStrategy:
     type: RollingUpdate

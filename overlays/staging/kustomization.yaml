@@ -3,7 +3,6 @@ kind: Kustomization
 resources:
 - ../../base
 namePrefix: staging-
-nameSuffix: -database-svc
 images:
 - name: BACKEND/IMAGE
   newName: gcr.io/dwk-gke-416915/backend
