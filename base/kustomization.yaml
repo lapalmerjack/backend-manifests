@@ -4,3 +4,6 @@ resources:
   - rollout-deployment.yaml
   - statefulset.yaml
   - postgres-secrets.yaml
+  - database-config.yaml
+  - nats-config.yaml
+  - ingress.yaml
