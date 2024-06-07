@@ -70,9 +70,8 @@ jobs:
           kustomize edit set image gcr.io/$PROJECT_ID/$IMAGE=gcr.io/$PROJECT_ID/$IMAGE:${GITHUB_REF#refs/heads/}-$GITHUB_SHA
 
       - name: commit kustomization.yaml to Github
-        run: |
-          cd base/overlays/staging
         uses:  EndBug/add-and-commit@v9
         with:
+          cwd: base/overlays/staging
           add: "kustomization.yaml"
           message: New version released ${{ github.sha }}
