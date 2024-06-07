@@ -8,3 +8,4 @@ resources:
   - nats-config.yaml
   - ingress.yaml
   - analysistemplate.yaml
+  - backendconfig.yaml
