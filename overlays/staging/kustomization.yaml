@@ -9,4 +9,4 @@ images:
   newTag: develop-b220e6503586a48686c7d9c505164a85a74044ca
 - name: gcr.io/dwk-gke-416915/backend
   newName: gcr.io/dwk-gke-416915/backend
-  newTag: develop-4103ba36e02c7f8f530aa2cf86c3208925261788
+  newTag: develop-cad5d2bfa3f7545aecc0bfd7917c94a19185a563
