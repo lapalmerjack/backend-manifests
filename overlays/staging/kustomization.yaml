@@ -6,6 +6,4 @@ namePrefix: staging-
 images:
 - name: BACKEND/IMAGE
   newName: gcr.io/dwk-gke-416915/backend
-- name: gcr.io/dwk-gke-416915/backend
-  newName: gcr.io/dwk-gke-416915/backend
   newTag: develop-2e2f7985be77cddeb0a6d91b66b11901dddaae63
