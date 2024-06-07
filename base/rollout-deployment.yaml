@@ -39,7 +39,16 @@ spec:
                 configMapKeyRef:
                   name: database-configuration
                   key: database.url
-
+            - name: NATS_URL
+              valueFrom:
+                configMapKeyRef:
+                  name: nats-config
+                  key: nats.url
+            - name: NATS_SUBJECT
+              valueFrom:
+                configMapKeyRef:
+                  name: nats-config
+                  key: nats.subject
 ---
 apiVersion: v1
 kind: Service
