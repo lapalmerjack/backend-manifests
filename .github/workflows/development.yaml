@@ -56,23 +56,24 @@ jobs:
         run: |
           docker push "gcr.io/$PROJECT_ID/$IMAGE:${GITHUB_REF#refs/heads/}-$GITHUB_SHA"
 
-      # Set up kustomize
       - name: Set up Kustomize
         run: |-
           curl -sfLo kustomize https://github.com/kubernetes-sigs/kustomize/releases/download/v3.1.0/kustomize_3.1.0_linux_amd64
           chmod u+x ./kustomize
           sudo mv ./kustomize /usr/local/bin/kustomize
 
-      - name: Use right image
-        run: |
-          pwd
+      - name: Update Kustomize Image Manually
+        run: |-
           cd overlays/staging
-          ls
-          kustomize edit set image gcr.io/$PROJECT_ID/$IMAGE=gcr.io/$PROJECT_ID/$IMAGE:${GITHUB_REF#refs/heads/}-$GITHUB_SHA
+          sed -i "s|newTag: .*|newTag: ${GITHUB_REF#refs/heads/}-${GITHUB_SHA}|g" kustomization.yaml
 
-      - name: commit kustomization.yaml to Github
-        uses:  EndBug/add-and-commit@v9
+      - name: Verify kustomization.yaml
+        run: |
+          cat overlays/staging/kustomization.yaml
+
+      - name: Commit kustomization.yaml to GitHub
+        uses: EndBug/add-and-commit@v9
         with:
-          cwd:  overlays/staging
+          cwd: overlays/staging
           add: "kustomization.yaml"
           message: New version released ${{ github.sha }}
