@@ -7,3 +7,4 @@ resources:
   - database-config.yaml
   - nats-config.yaml
   - ingress.yaml
+  - analysistemplate.yaml
